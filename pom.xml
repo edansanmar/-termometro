@@ -73,5 +73,29 @@
             </plugin>
         </plugins>
     </build>
+    <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>{versión del plugin}</version>
+            <configuration>
+                <!-- Configuraciones adicionales si es necesario -->
+            </configuration>
+            <executions>
+                <execution>
+                    <id>surefire-test</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>test</goal>
+                    </goals>
+                    <configuration>
+                        <!-- Configuraciones adicionales si es necesario -->
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
 
 </project>
