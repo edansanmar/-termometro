@@ -11,4 +11,4 @@ COPY target/crud-0.0.1-SNAPSHOT.jar ./
 EXPOSE 3500
 
 # Define el comando que se ejecuta al iniciar el contenedor
-CMD ["java", "-jar", "crud-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "termometer-0.0.1-SNAPSHOT.jar"]
