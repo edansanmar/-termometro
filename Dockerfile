@@ -5,7 +5,7 @@ FROM openjdk:latest
 WORKDIR termometro
 
 # Copia el archivo jar de la aplicación al directorio de trabajo
-COPY target/crud-0.0.1-SNAPSHOT.jar ./
+COPY target/termometer-0.0.1-SNAPSHOT.jar.jar ./
 
 # Expone el puerto en el que se ejecuta la aplicación
 EXPOSE 3500
