@@ -12,3 +12,5 @@ EXPOSE 3500
 
 # Define el comando que se ejecuta al iniciar el contenedor
 CMD ["java", "-jar", "termometer-0.0.1-SNAPSHOT.jar"]
+
+ localhost:8080/job/tarea_4/build?token=codigofacilito

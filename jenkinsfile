@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Ejecutar Pipeline') {
+            steps {
+                script {
+                    // Determinar la rama actual
+                    def branchName = env.BRANCH_NAME ?: 'develop' 
+                    // Si no hay una rama definida, usa 'develop'
+                    
+                    // Llamada a la biblioteca Jenkins "devops" según la rama
+                    library 'devops@' + branchName
+                    
+                    // Invocar el método pipelineGeneral de la biblioteca devops
+                    def result = pipelineGeneral()
+                    
+                    // Puedes utilizar 'result' según lo que devuelva la función
+                    // Por ejemplo, imprimirlo en la consola de Jenkins
+                    echo "El resultado de pipelineGeneral es: ${result}"
+                }
+            }
+        }
+    }
+}
