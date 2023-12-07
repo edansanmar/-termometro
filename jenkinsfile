@@ -1,5 +1,5 @@
 // Cargar la biblioteca compartida
-@Library('devops') _
+@Library('devops@https://github.com/edansanmar/devops.git') _
 
 // Llamar a la función de la biblioteca compartida
 pipelineGeneral()
