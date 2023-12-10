@@ -1,5 +1,12 @@
-// Cargar la biblioteca compartida
-@Library('devops') _
-
-// Llamar a la función de la biblioteca compartida
-pipelineGeneral()
+pipeline {
+//Pipeline, para llamar el proceso complero del Pipeline
+    agent any
+    stages{
+        stage('LLamando del Pipeline externo')
+            steps{
+                script {
+                    load 'https://github.com/edansanmar/devops.git/vars/pipelineGeneral.groovy'
+                }
+            }
+    }
+}
