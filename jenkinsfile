@@ -1,21 +1,11 @@
-pipeline {
-    agent any
+@Library('github.com/edansanmar/devops.git') _
+if (currentBuildExt().hasChangeIn('src')) {
+  return
+}
+node {
+  sh 'make'
+}
 
-    stages {
-        stage('Checkout') {
-            steps {
-                script {
-                    // Clonar el repositorio
-                    checkout([$class: 'Git', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/edansanmar/devops.git']]])
-
-                    // Cargar el archivo después de clonar el repositorio
-                    def pipelineGeneral = load 'vars/pipelineGeneral.groovy'
-                    
-                    // Ahora puedes usar pipelineGeneral en tu script
-                    // ...
-                }
-            }
-        }
 
         // Otras etapas de tu pipeline
     }
