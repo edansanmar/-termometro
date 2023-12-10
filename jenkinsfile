@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     // Cambio 
-                    load 'https://github.com/edansanmar/devops.git/vars/pipelineGeneral.groovy'
+                    load '/https://github.com/edansanmar/devops.git/vars/pipelineGeneral.groovy'
                 }
             }
         }
