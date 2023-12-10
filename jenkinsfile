@@ -1,16 +1,22 @@
 pipeline {
-    // Pipeline para llamar el proceso completo del Pipeline
     agent any
 
     stages {
-        stage('Llamando del Pipeline externo') {
+        stage('Checkout') {
             steps {
                 script {
-                    // Cambio 
-                    load 'https://raw.githubusercontent.com/edansanmar/devops/master/vars/pipelineGeneral.groovy'
+                    // Clonar el repositorio
+                    checkout([$class: 'Git', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/edansanmar/devops.git']]])
 
+                    // Cargar el archivo después de clonar el repositorio
+                    def pipelineGeneral = load 'vars/pipelineGeneral.groovy'
+                    
+                    // Ahora puedes usar pipelineGeneral en tu script
+                    // ...
                 }
             }
         }
+
+        // Otras etapas de tu pipeline
     }
 }
