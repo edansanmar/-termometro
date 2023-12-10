@@ -1,12 +1,1 @@
 @Library('github.com/edansanmar/devops.git') _
-if (currentBuildExt().hasChangeIn('src')) {
-  return
-}
-node {
-  sh 'make'
-}
-
-
-        // Otras etapas de tu pipeline
-    }
-}
