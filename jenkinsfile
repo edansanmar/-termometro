@@ -1,13 +1,15 @@
 pipeline {
-//Pipeline, para llamar el proceso complero del Pipeline
+    // Pipeline para llamar el proceso completo del Pipeline
     agent any
-    stages{
-        stage('LLamando del Pipeline externo')
-            steps{
+
+    stages {
+        stage('Llamando del Pipeline externo') {
+            steps {
                 script {
-                    //Cambio 
+                    // Cambio 
                     load 'https://github.com/edansanmar/devops.git/vars/pipelineGeneral.groovy'
                 }
             }
+        }
     }
 }
