@@ -1,5 +1,6 @@
 //@Library, es una directiva en Jenkins, para poder cargar la librería compartida
 @Library('devops@feature') _ //Prueba de funcionamiento de independencia de la rama master y feature #1
+@Library('devops@') _ //Funcionamiento con la rama master
 // scmUrl es una variable que se está utilizando  para invocar el repositorio de libreria compartida, lo que permitira invocar dicho repositorio
 //así como la información en el repositior de devops, este sea un parametro de entrada
 def scmUrl = 'https://github.com/edansanmar/termometro.git'
@@ -7,5 +8,6 @@ def scmUrl = 'https://github.com/edansanmar/termometro.git'
 // este archivo, está  localizado en la carpeta vars
 pipelineGeneral(scmUrl:scmUrl)
 //Manejo de la rama Feature 
+//Prueba del disparador 
 
 
