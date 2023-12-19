@@ -6,6 +6,6 @@ def scmUrl = 'https://github.com/edansanmar/termometro.git'
 //al usar pipelineGeneral, se está llamando la función de dicho nombre, el cual es un archivo .groovy en el repositorio devops
 // este archivo, está  localizado en la carpeta vars
 pipelineGeneral(scmUrl:scmUrl)
-//Manejo de la rama Develop 
+//Manejo de la rama Feature 
 
 
