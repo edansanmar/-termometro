@@ -8,7 +8,6 @@ def scmUrl = 'https://github.com/edansanmar/termometro.git'
 // este archivo, está  localizado en la carpeta vars
 pipelineGeneral(scmUrl:scmUrl)
 //Manejo de la rama Feature 
-//Cambio
 //Intento diferente del activador
 //Prueba del disparador #2
 //Prueba del disparador #1 para validar funcionamiento 
