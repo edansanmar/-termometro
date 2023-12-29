@@ -27,3 +27,4 @@ EXPOSE 3000
 # Comando de entrada para ejecutar la aplicación cuando se inicia el contenedor.
 CMD ["java", "-jar", "app.jar"]
 
+#Prueba para realizar el pull request repositorio termomentro #4
