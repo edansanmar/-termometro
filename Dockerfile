@@ -1,18 +1,29 @@
-#Se utiliza el from, para indincar las imagenes base que se utilizaran, para realizar
-#La siguiente imagen, en este caso se utilizara una de maven y una de openjdk
-#Cabe adicionar que en este caso la imagen base dera maven y se complementara
-#con el jdk 11, además esta parte sera conocida como builder.
+# Etapa de compilación:
+# Se utiliza la imagen de maven con JDK 11 como base para construir la aplicación.
 FROM maven:3.9.5-openjdk-11 AS builder
 
-#Se procede a definir la tura en donde se creara el directorio de trabajo 
-#de la imagen que se creara.
+# Se establece el directorio de trabajo en la imagen.
 WORKDIR /termometro
 
-# Copia el archivo JAR generado por la compilación al directorio de trabajo en el contenedor
-COPY --from=builder /crudspringboot/target/*.jar app.jar
+# Se copian todos los archivos del directorio actual (del contexto de construcción) al
+# directorio de trabajo en la imagen.
+COPY . .
 
-# Expone el puerto 3000 del contenedor
-EXPOSE 3030
+# Se ejecuta el comando Maven para limpiar y empaquetar la aplicación.
+RUN mvn clean package
 
-# Comando de entrada para ejecutar la aplicación
+# Etapa de ejecución del proyecto:
+# Se inicia una nueva etapa utilizando la imagen base de OpenJDK 11.
+FROM openjdk:11.0.11-jdk
+
+# Se copia el archivo JAR generado por la compilación en la etapa anterior 
+#al directorio de trabajo en la nueva imagen.
+COPY --from=builder /termometro/target/*.jar app.jar
+
+# Se expone el puerto 3000 del contenedor, que presumiblemente es 
+#el puerto en el que la aplicación escucha las conexiones.
+EXPOSE 3000
+
+# Comando de entrada para ejecutar la aplicación cuando se inicia el contenedor.
 CMD ["java", "-jar", "app.jar"]
+
