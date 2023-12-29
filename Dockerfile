@@ -1,6 +1,6 @@
 # Etapa de compilación:
 # Se utiliza la imagen de maven con JDK 11 como base para construir la aplicación.
-FROM maven:3.9.5-openjdk-11 AS builder
+FROM maven:3.8.4-openjdk-11 AS builder
 
 # Se establece el directorio de trabajo en la imagen.
 WORKDIR /termometro
