@@ -10,11 +10,6 @@ pipelineGeneral(scmUrl:scmUrl)
 //Manejo de la rama Feature 
 //Prueba del disparador #2
 //Prueba del disparador #1 para validar funcionamiento 
-<<<<<<< HEAD
-//Cambio en el funcionamiento 
-=======
-
->>>>>>> develop
 
 
 
