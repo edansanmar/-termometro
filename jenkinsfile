@@ -1,5 +1,5 @@
 //@Library, es una directiva en Jenkins, para poder cargar la librería compartida
-@Library('devops@master') _ //Prueba de funcionamiento de independencia de la rama master y feature #1
+@Library('devops') _ //Prueba de funcionamiento de independencia de la rama master y feature #1
 //@Library('devops') _ //Funcionamiento con la rama master
 // scmUrl es una variable que se está utilizando  para invocar el repositorio de libreria compartida, lo que permitira invocar dicho repositorio
 //así como la información en el repositior de devops, este sea un parametro de entrada
